@@ -15,6 +15,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,11 +25,23 @@
         <module>inventory_service</module>
         <module>orders_service</module>
         <module>products_service</module>
+        <module>api_gateway</module>
     </modules>
 
     <dependencies>
 
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
